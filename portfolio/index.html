@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karina Fadhilah - Portfolio</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet" />
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+  <!-- PAGE LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader__bg"></div>
+    <div class="loader__content">
+      <div class="loader__name">
+        <span class="l-char" style="--d:0ms">K</span>
+        <span class="l-char" style="--d:60ms">A</span>
+        <span class="l-char" style="--d:120ms">R</span>
+        <span class="l-char" style="--d:180ms">I</span>
+        <span class="l-char" style="--d:240ms">N</span>
+        <span class="l-char" style="--d:300ms">A</span>
+
+        <span class="l-char" style="--d:420ms">F</span>
+        <span class="l-char" style="--d:480ms">A</span>
+        <span class="l-char" style="--d:540ms">D</span>
+        <span class="l-char" style="--d:600ms">H</span>
+        <span class="l-char" style="--d:660ms">I</span>
+        <span class="l-char" style="--d:720ms">L</span>
+        <span class="l-char" style="--d:780ms">A</span>
+        <span class="l-char" style="--d:840ms">H</span>
+      </div>
+      <div class="loader__role">UI/UX Designer & Motion Graphics</div>
+      <div class="loader__bar">
+        <div class="loader__fill"></div>
+      </div>
+    </div>
+    <div class="loader__blobs">
+      <div class="lb lb--1"></div>
+      <div class="lb lb--2"></div>
+      <div class="lb lb--3"></div>
+    </div>
+  </div>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-dot"></span>
+      ZN
+    </a>
+
+    <div class="nav__pill">
+      <ul class="nav__links">
+        <li><a href="#about" class="nav__link" data-num="01">About</a></li>
+        <li><a href="#works" class="nav__link" data-num="02">Works</a></li>
+        <li><a href="#services" class="nav__link" data-num="03">Services</a></li>
+        <li><a href="#contact" class="nav__link" data-num="04">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav__cta">
+      <span class="nav__avail">Available for work</span>
+      <div class="nav__avail-dot"></div>
+    </div>
+  </nav>
+
+  <!-- SMOOTH WRAPPER -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <main class="site-main">
+
+        <!-- ═══════════════════════════════
+           HERO
+      ═══════════════════════════════ -->
+        <section class="hero" id="hero">
+
+          <!-- Colorful blob background -->
+          <div class="hero__blobs">
+            <div class="blob blob--magenta"></div>
+            <div class="blob blob--cyan"></div>
+            <div class="blob blob--yellow"></div>
+            <div class="blob blob--lime"></div>
+            <div class="blob blob--orange"></div>
+          </div>
+
+          <!-- Noise grain overlay -->
+          <div class="hero__grain"></div>
+
+          <!-- Grid -->
+          <div class="hero__grid-lines"></div>
+
+          <!-- Floating badges -->
+          <div class="hero__badge hero__badge--1" data-parallax="0.06">
+            <span class="badge-emoji">✦</span>
+            <span>UI/UX</span>
+          </div>
+          <div class="hero__badge hero__badge--2" data-parallax="0.04">
+            <span class="badge-emoji">◈</span>
+            <span>Web Development</span>
+          </div>
+          <div class="hero__badge hero__badge--4" data-parallax="0.05">
+            <span class="badge-emoji">◉</span>
+            <span>Product Development</span>
+          </div>
+
+          <!-- Floating deco shapes -->
+
+          <!-- Main content -->
+          <div class="hero__content">
+            <div class="hero__eyebrow">
+              <span class="hero__tag">Portfolio 2025</span>
+              <span class="hero__tag hero__tag--outline">Freelance Open</span>
+            </div>
+
+            <h1 class="hero__title">
+              <div class="hero__title-row">
+                <em class="ht-word ht-word--italic" data-word="Hi, I'm">Hi, I'm</em>
+              </div>
+              <div class="hero__title-row">
+                <span class="ht-word" data-word="Karina Fadhilah" style="white-space: nowrap;">Karina Fadhilah</span>
+              </div>
+            </h1>
+
+            <div class="hero__actions">
+              <a href="#works" class="btn btn--primary">
+                <span>View Work</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+              <a href="#contact" class="btn btn--ghost">Let's Talk</a>
+            </div>
+          </div>
+
+          <!-- Avatar block -->
+          <div class="hero__avatar-block">
+            <div class="hero__avatar-frame">
+              <div class="hero__avatar-img">
+                <img src="src/images/profile 1.png" alt="Karina Fadhilah"
+                  style="width: 100%; height: 100%; object-fit: cover; object-position: top center;" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Scroll hint -->
+
+          <!-- Ticker -->
+          <div class="hero__ticker">
+            <div class="ticker-track">
+              <span>Brand Identity</span><span class="t-sep">✦</span>
+              <span>UI/UX Design</span><span class="t-sep">✦</span>
+              <span>Motion Graphics</span><span class="t-sep">✦</span>
+              <span>Creative Direction</span><span class="t-sep">✦</span>
+              <span>3D Illustration</span><span class="t-sep">✦</span>
+              <span>Web Design</span><span class="t-sep">✦</span>
+              <span>Brand Identity</span><span class="t-sep">✦</span>
+              <span>UI/UX Design</span><span class="t-sep">✦</span>
+              <span>Motion Graphics</span><span class="t-sep">✦</span>
+              <span>Creative Direction</span><span class="t-sep">✦</span>
+              <span>3D Illustration</span><span class="t-sep">✦</span>
+              <span>Web Design</span><span class="t-sep">✦</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════
+           ABOUT
+      ═══════════════════════════════ -->
+        <section class="about" id="about">
+          <div class="about__blobs">
+            <div class="blob blob--cyan blob--sm"></div>
+            <div class="blob blob--magenta blob--sm"></div>
+          </div>
+
+          <div class="about__inner">
+            <div class="about__label" data-reveal data-dir="left">
+              <span class="sec-tag">✦ About Me</span>
+            </div>
+
+            <div class="about__left">
+              <div class="about__photo-wrap" data-reveal data-dir="left">
+                <div class="about__photo">
+                  <svg viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" class="about-svg">
+                    <defs>
+                      <linearGradient id="abg" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#1a0533" />
+                        <stop offset="100%" stop-color="#0d1a2e" />
+                      </linearGradient>
+                    </defs>
+                    <rect width="280" height="360" fill="url(#abg)" />
+                    <circle cx="140" cy="120" r="65" fill="#f5d0a9" opacity="0.95" />
+                    <rect x="75" y="240" width="130" height="120" rx="10" fill="#ff6bff" opacity="0.3" />
+                    <ellipse cx="140" cy="130" rx="55" ry="30" fill="#2a1810" />
+                    <ellipse cx="90" cy="130" rx="18" ry="40" fill="#2a1810" />
+                    <ellipse cx="190" cy="130" rx="18" ry="40" fill="#2a1810" />
+                    <circle cx="118" cy="128" r="9" fill="#1a0e05" />
+                    <circle cx="162" cy="128" r="9" fill="#1a0e05" />
+                    <circle cx="120" cy="125" r="3" fill="white" />
+                    <circle cx="164" cy="125" r="3" fill="white" />
+                    <path d="M128 155 Q140 164 152 155" stroke="#c07a50" stroke-width="2.5" fill="none"
+                      stroke-linecap="round" />
+                    <!-- Color splashes -->
+                    <circle cx="30" cy="300" r="40" fill="#ff6bff" opacity="0.4" />
+                    <circle cx="240" cy="50" r="30" fill="#5fffd4" opacity="0.4" />
+                    <circle cx="250" cy="320" r="25" fill="#ffe066" opacity="0.4" />
+                  </svg>
+                  <div class="photo__color-bar">
+                    <div class="pcb pcb--1"></div>
+                    <div class="pcb pcb--2"></div>
+                    <div class="pcb pcb--3"></div>
+                    <div class="pcb pcb--4"></div>
+                  </div>
+                </div>
+                <div class="about__photo-tag">
+                  <span>✦ Based in NYC</span>
+                </div>
+              </div>
+
+              <div class="about__skills-pills" data-reveal data-dir="bottom">
+                <span class="skill-pill skill-pill--m">Figma</span>
+                <span class="skill-pill skill-pill--c">After Effects</span>
+                <span class="skill-pill skill-pill--y">Blender</span>
+                <span class="skill-pill skill-pill--l">Webflow</span>
+                <span class="skill-pill skill-pill--o">Cinema 4D</span>
+                <span class="skill-pill skill-pill--m">Framer</span>
+              </div>
+            </div>
+
+            <div class="about__right">
+              <h2 class="about__heading" data-reveal data-dir="right">
+                I design things that<br />
+                <em>people feel</em>,<br />
+                not just see.
+              </h2>
+              <p class="about__body" data-reveal data-dir="right">
+                With over 7 years crafting digital experiences for startups to Fortune 500 companies, I specialize in
+                the
+                art of turning complex ideas into intuitive, visually stunning interfaces. My work spans brand
+                identities,
+                interactive websites, motion design, and digital campaigns.
+              </p>
+              <p class="about__body" data-reveal data-dir="right">
+                I believe great design is invisible — it just <em>feels right</em>. Every pixel, every transition, every
+                color choice serves a purpose. Let's create something unforgettable together.
+              </p>
+
+              <div class="about__counters" data-reveal data-dir="bottom">
+                <div class="counter-block counter-block--m">
+                  <span class="counter-num" data-target="120">0</span><span class="counter-plus">+</span>
+                  <span class="counter-label">Projects Done</span>
+                </div>
+                <div class="counter-block counter-block--c">
+                  <span class="counter-num" data-target="40">0</span><span class="counter-plus">+</span>
+                  <span class="counter-label">Happy Clients</span>
+                </div>
+                <div class="counter-block counter-block--y">
+                  <span class="counter-num" data-target="7">0</span><span class="counter-plus">+</span>
+                  <span class="counter-label">Years Active</span>
+                </div>
+                <div class="counter-block counter-block--l">
+                  <span class="counter-num" data-target="18">0</span><span class="counter-plus">k</span>
+                  <span class="counter-label">Followers</span>
+                </div>
+              </div>
+
+              <div class="about__cta" data-reveal data-dir="right">
+                <a href="#contact" class="btn btn--gradient">Start a project →</a>
+                <a href="#" class="btn btn--link">Download CV ↗</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════
+           WORKS
+      ═══════════════════════════════ -->
+        <section class="works" id="works">
+          <div class="works__blobs">
+            <div class="blob blob--lime blob--sm"></div>
+            <div class="blob blob--orange blob--sm"></div>
+          </div>
+
+          <div class="works__header">
+            <span class="sec-tag" data-reveal data-dir="left">✦ Selected Works</span>
+            <h2 class="sec-title" data-reveal data-dir="bottom">Recent Projects</h2>
+            <p class="works__sub" data-reveal data-dir="right">A curated selection of work I'm proud of.<br />Each
+              project
+              is a story worth telling.</p>
+          </div>
+
+          <!-- Project 1 — Full width -->
+          <!-- Projects grid -->
+          <div class="projects-grid">
+            <div class="project project--full" data-reveal data-dir="bottom">
+              <div class="project__bg project__bg--1">
+                <div class="project__blob project__blob--m"></div>
+                <div class="project__blob project__blob--c"></div>
+              </div>
+              <div class="project__content">
+                <div class="project__meta">
+                  <span class="project__num">01</span>
+                  <div class="project__tags">
+                    <span class="ptag ptag--m">Branding</span>
+                    <span class="ptag ptag--c">UI Design</span>
+                  </div>
+                </div>
+                <h3 class="project__title">Neon Bloom<br /><em>— Visual Identity</em></h3>
+                <p class="project__desc">Complete brand identity system for a next-gen wellness app. From logo to design
+                  system, 200+ components.</p>
+                <a href="#" class="project__link">View Case Study →</a>
+              </div>
+              <div class="project__preview project__preview--1">
+                <div class="preview-mockup">
+                  <div class="pm-screen pm-screen--1">
+                    <div class="pm-bar pm-bar--m"></div>
+                    <div class="pm-bar pm-bar--c" style="width:70%"></div>
+                    <div class="pm-bar pm-bar--y" style="width:85%"></div>
+                    <div class="pm-circle pm-circle--m"></div>
+                  </div>
+                  <div class="pm-screen pm-screen--2">
+                    <div class="pm-circle pm-circle--c" style="width:60px;height:60px"></div>
+                    <div class="pm-bar pm-bar--l" style="height:8px"></div>
+                    <div class="pm-bar pm-bar--o" style="width:60%;height:8px"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project project--full" data-reveal data-dir="bottom">
+              <div class="project__bg project__bg--2">
+                <div class="project__blob project__blob--y"></div>
+              </div>
+              <div class="project__content">
+                <span class="project__num">02</span>
+                <div class="project__tags">
+                  <span class="ptag ptag--y">Motion</span>
+                </div>
+                <h3 class="project__title">Kinetic Type<br /><em>— Film Titles</em></h3>
+                <p class="project__desc">Opening title sequence for an award-winning short film using pure CSS and SVG
+                  animation.</p>
+                <a href="#" class="project__link">View →</a>
+              </div>
+              <div class="project__preview project__preview--2">
+                <div class="preview-type">
+                  <div class="pt-line pt-line--1">MOTION</div>
+                  <div class="pt-line pt-line--2">DESIGN</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project project--full" data-reveal data-dir="bottom">
+              <div class="project__bg project__bg--3">
+                <div class="project__blob project__blob--l"></div>
+              </div>
+              <div class="project__content">
+                <span class="project__num">03</span>
+                <div class="project__tags">
+                  <span class="ptag ptag--l">3D</span>
+                  <span class="ptag ptag--m">Art Direction</span>
+                </div>
+                <h3 class="project__title">Pixel Dreams<br /><em>— 3D Campaign</em></h3>
+                <p class="project__desc">Visual campaign for a gaming startup featuring surreal 3D illustrations and
+                  bold
+                  typography.</p>
+                <a href="#" class="project__link">View →</a>
+              </div>
+              <div class="project__preview project__preview--3">
+                <div class="preview-3d">
+                  <div class="p3d-cube">
+                    <div class="p3d-face p3d-face--front"></div>
+                    <div class="p3d-face p3d-face--right"></div>
+                    <div class="p3d-face p3d-face--top"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project project--full" data-reveal data-dir="bottom">
+              <div class="project__bg project__bg--4">
+                <div class="project__blob project__blob--o"></div>
+                <div class="project__blob project__blob--m" style="right:-80px;top:50%"></div>
+              </div>
+              <div class="project__content">
+                <span class="project__num">04</span>
+                <div class="project__tags">
+                  <span class="ptag ptag--o">Web Design</span>
+                  <span class="ptag ptag--c">Dev</span>
+                </div>
+                <h3 class="project__title">Orbit Studio<br /><em>— Website Redesign</em></h3>
+                <p class="project__desc">Full website redesign for a creative agency. Custom scroll, GSAP animations,
+                  and
+                  a bold new visual language.</p>
+                <a href="#" class="project__link">View Case Study →</a>
+              </div>
+              <div class="project__preview project__preview--4">
+                <div class="preview-web">
+                  <div class="pw-nav"></div>
+                  <div class="pw-hero">
+                    <div class="pw-h-text"></div>
+                    <div class="pw-h-text" style="width:70%;height:12px;opacity:0.5"></div>
+                  </div>
+                  <div class="pw-cards">
+                    <div class="pw-card pw-card--m"></div>
+                    <div class="pw-card pw-card--c"></div>
+                    <div class="pw-card pw-card--y"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════
+           SERVICES
+      ═══════════════════════════════ -->
+        <section class="services" id="services">
+          <div class="services__sticky-container">
+            <div class="services__blobs">
+              <div class="blob blob--magenta blob--sm"></div>
+              <div class="blob blob--yellow blob--sm"></div>
+            </div>
+
+            <div class="services__header">
+              <span class="sec-tag" data-reveal data-dir="left">✦ What I Do</span>
+              <h2 class="sec-title" data-reveal data-dir="top">Services</h2>
+            </div>
+
+            <div class="services__grid">
+              <div class="service-card" data-reveal data-dir="bottom" style="--c1:#ff6bff;--c2:#6b5fff">
+                <div class="service-card__icon">◈</div>
+                <div class="service-card__num">01</div>
+                <h3 class="service-card__title">UI / UX Design</h3>
+                <p class="service-card__desc">Research-driven interfaces that convert and delight. From wireframes to
+                  polished, pixel-perfect designs with thorough design systems.</p>
+                <ul class="service-card__list">
+                  <li>User Research & Testing</li>
+                  <li>Wireframing & Prototyping</li>
+                  <li>Design Systems</li>
+                  <li>Accessibility Audits</li>
+                </ul>
+                <div class="service-card__glow"></div>
+              </div>
+
+              <div class="service-card" data-reveal data-dir="bottom" style="--c1:#5fffd4;--c2:#3b9eff;--delay:0.1s">
+                <div class="service-card__icon">✦</div>
+                <div class="service-card__num">02</div>
+                <h3 class="service-card__title">Brand Identity</h3>
+                <p class="service-card__desc">Distinctive visual identities that communicate your values instantly.
+                  Logos,
+                  palettes, typography, and the full brand universe.</p>
+                <ul class="service-card__list">
+                  <li>Logo Design</li>
+                  <li>Brand Guidelines</li>
+                  <li>Collateral Design</li>
+                  <li>Visual Strategy</li>
+                </ul>
+                <div class="service-card__glow"></div>
+              </div>
+
+              <div class="service-card" data-reveal data-dir="bottom" style="--c1:#ffe066;--c2:#ff9a3c;--delay:0.2s">
+                <div class="service-card__icon">❋</div>
+                <div class="service-card__num">03</div>
+                <h3 class="service-card__title">Motion Design</h3>
+                <p class="service-card__desc">Animation and motion that breathe life into your brand — from
+                  micro-interactions to full explainer videos and title sequences.</p>
+                <ul class="service-card__list">
+                  <li>UI Micro-interactions</li>
+                  <li>Explainer Videos</li>
+                  <li>Social Content</li>
+                  <li>Title Sequences</li>
+                </ul>
+                <div class="service-card__glow"></div>
+              </div>
+
+              <div class="service-card" data-reveal data-dir="bottom" style="--c1:#a8ff6b;--c2:#3bffd4;--delay:0.3s">
+                <div class="service-card__icon">◉</div>
+                <div class="service-card__num">04</div>
+                <h3 class="service-card__title">Web Design & Dev</h3>
+                <p class="service-card__desc">Beautiful, performant websites built with modern tech. Webflow, Framer, or
+                  custom-coded — always smooth, always fast.</p>
+                <ul class="service-card__list">
+                  <li>Webflow / Framer</li>
+                  <li>Custom HTML/CSS/JS</li>
+                  <li>CMS Integration</li>
+                  <li>Performance Optimization</li>
+                </ul>
+                <div class="service-card__glow"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact Ticker -->
+        <div class="contact__ticker">
+          <div class="ticker-track">
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+            <span>Let's Connect</span><span class="t-sep">✦</span>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════
+           CONTACT
+      ═══════════════════════════════ -->
+        <section class="contact" id="contact">
+          <div class="contact__blobs">
+            <div class="blob blob--cyan"></div>
+            <div class="blob blob--magenta"></div>
+            <div class="blob blob--lime blob--sm"></div>
+          </div>
+          <div class="contact__grain"></div>
+
+          <div class="contact__inner">
+            <div class="contact__left">
+              <span class="sec-tag" data-reveal data-dir="left">✦ Let's Connect</span>
+              <h2 class="contact__heading" data-reveal data-dir="left">
+                Have a<br />project in<br /><em>mind?</em>
+              </h2>
+              <p class="contact__sub" data-reveal data-dir="left">
+                Let's create something together. I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your vision.
+              </p>
+              <div class="contact__links" data-reveal data-dir="bottom">
+                <a href="mailto:hello@zaranova.co" class="clink">
+                  <span class="clink__icon">✉</span>
+                  <span class="clink__text">hello@zaranova.co</span>
+                </a>
+                <a href="tel:+12025557890" class="clink">
+                  <span class="clink__icon">✆</span>
+                  <span class="clink__text">+1 (202) 555-7890</span>
+                </a>
+              </div>
+              <div class="contact__socials" data-reveal data-dir="bottom">
+                <a href="#" class="social-btn social-btn--m">In</a>
+                <a href="#" class="social-btn social-btn--c">Tw</a>
+                <a href="#" class="social-btn social-btn--y">Dr</a>
+                <a href="#" class="social-btn social-btn--l">Be</a>
+              </div>
+            </div>
+
+            <div class="contact__form-wrap" data-reveal data-dir="right">
+              <div class="contact__form-glow"></div>
+              <form class="contact__form" onsubmit="return false">
+                <div class="cform__header">Send a Message</div>
+                <div class="cform__grid">
+                  <div class="cform__field">
+                    <label class="cform__label">Your Name</label>
+                    <input class="cform__input" type="text" placeholder="Alex Johnson" />
+                  </div>
+                  <div class="cform__field">
+                    <label class="cform__label">Your Email</label>
+                    <input class="cform__input" type="email" placeholder="hello@mail.com" />
+                  </div>
+                  <div class="cform__field cform__field--full">
+                    <label class="cform__label">Subject</label>
+                    <input class="cform__input" type="text" placeholder="Project Inquiry" />
+                  </div>
+                  <div class="cform__field cform__field--full">
+                    <label class="cform__label">Message</label>
+                    <textarea class="cform__input cform__textarea"
+                      placeholder="Tell me about your project..."></textarea>
+                  </div>
+                </div>
+                <button class="btn btn--gradient btn--form" id="formBtn">
+                  <span>Send Message</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+      </main>
+      <div class="footer-spacer" style="height: 100vh;"></div>
+    </div><!-- smooth-content -->
+  </div><!-- smooth-wrapper -->
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__video-bg">
+      <div class="footer__mesh-bg"></div>
+    </div>
+    <div class="footer__inner">
+      <!-- FOOTER TOP SECTION -->
+      <div class="footer__top">
+        <div class="footer__col footer__col--brand">
+          <div class="footer__logo">
+            <span class="nav__logo-dot"></span>
+            ZN
+          </div>
+          <p class="footer__slogan">Crafting high-end digital experiences that people feel, not just see.</p>
+        </div>
+        
+        <div class="footer__col footer__col--links">
+          <span class="footer__col-title">Navigation</span>
+          <ul class="footer__col-list">
+            <li><a href="#about" class="footer__link">About</a></li>
+            <li><a href="#works" class="footer__link">Works</a></li>
+            <li><a href="#services" class="footer__link">Services</a></li>
+            <li><a href="#contact" class="footer__link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__col footer__col--contact">
+          <span class="footer__col-title">Say Hello</span>
+          <a href="mailto:hello@zaranova.co" class="footer__email">hello@zaranova.co</a>
+          <div class="footer__socials-row">
+            <a href="#" class="footer__social-link">In</a>
+            <a href="#" class="footer__social-link">Tw</a>
+            <a href="#" class="footer__social-link">Dr</a>
+            <a href="#" class="footer__social-link">Be</a>
+          </div>
+        </div>
+
+        <div class="footer__col footer__col--tech">
+          <span class="footer__col-title">Website made using</span>
+          <ul class="footer__tech-list">
+            <li>Figma</li>
+            <li>Webflow</li>
+            <li>GSAP</li>
+            <li>AE/Lottie</li>
+            <li>Smooth Scroll</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GIANT SPLIT NAME -->
+      <div class="footer__giant-name">
+        <span class="fname-left">Karina</span>
+        <span class="fname-right">Fadhilah</span>
+      </div>
+
+      <!-- BOTTOM CREDITS -->
+      <div class="footer__bottom-credits">
+        <span>Freelance Design Director 2026</span>
+        <span>Based in Indonesia [Available for Work]</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/smooth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
