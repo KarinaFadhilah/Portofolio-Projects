@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFormSubmit();
     initTextScramble();
     initAboutPhotoTilt();
+    initTimelineTracing(scroller);
   }
 
   /* ─────────────────────────────────────
@@ -600,5 +601,48 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─────────────────────────────────────
      STICKY SERVICES SCROLL ANIMATION
   ───────────────────────────────────── */
+
+  /* ─────────────────────────────────────
+     TIMELINE INTERACTIVE TRACING
+  ───────────────────────────────────── */
+  function initTimelineTracing(s) {
+    const section = document.querySelector('.experience');
+    const lineTrack = document.querySelector('.timeline__line');
+    const progressLine = document.querySelector('.timeline__line-progress');
+    const items = document.querySelectorAll('.timeline__item');
+
+    if (!section || !progressLine) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate the clip-path of the progress line as the user scrolls down
+    gsap.fromTo(progressLine,
+      {
+        clipPath: 'inset(0% 0% 100% 0%)'
+      },
+      {
+        clipPath: 'inset(0% 0% 0% 0%)',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: lineTrack || section,
+          scroller: '#smooth-content',
+          start: 'top 80%',
+          end: 'bottom 50%',
+          scrub: true
+        }
+      }
+    );
+
+    // Synchronize Landmark Nodes (dots) to light up exactly when the path reaches their centers
+    items.forEach(item => {
+      ScrollTrigger.create({
+        trigger: item,
+        scroller: '#smooth-content',
+        start: 'center 50%', // when center of item (where node is located) reaches viewport center
+        end: 'bottom 20%',
+        toggleClass: { targets: item, className: 'traced' }
+      });
+    });
+  }
 
 }); // DOMContentLoaded

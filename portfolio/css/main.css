@@ -2741,9 +2741,24 @@ h6,
   /* Leave space for skills stack at base */
   left: 50%;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(255, 107, 255, 0.1), var(--cyan) 30%, var(--magenta) 70%, rgba(255, 107, 255, 0.1));
+  background: transparent;
   transform: translateX(-50%);
   z-index: 1;
+}
+
+/* Central interactive progress tracking line */
+.timeline__line-progress {
+  position: absolute;
+  top: 0;
+  bottom: 120px;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), var(--magenta));
+  transform: translateX(-50%);
+  z-index: 2; /* Sits above standard track line, below nodes */
+  pointer-events: none;
+  box-shadow: 0 0 8px var(--cyan), 0 0 15px var(--magenta);
+  clip-path: inset(0 0 100% 0); /* Hidden by default, animated via ScrollTrigger */
 }
 
 .timeline__item {
@@ -2802,25 +2817,25 @@ h6,
 
 /* Light up state for viewport enter / scroll link */
 .timeline__item:hover .timeline__node,
-.timeline__item.visible .timeline__node {
+.timeline__item.traced .timeline__node {
   border-color: var(--cyan);
   box-shadow: 0 0 15px var(--cyan);
 }
 
 .timeline__item:hover .timeline__node-inner,
-.timeline__item.visible .timeline__node-inner {
+.timeline__item.traced .timeline__node-inner {
   background: var(--cyan);
   transform: scale(1.2);
 }
 
 .timeline__item--right:hover .timeline__node,
-.timeline__item--right.visible .timeline__node {
+.timeline__item--right.traced .timeline__node {
   border-color: var(--magenta);
   box-shadow: 0 0 15px var(--magenta);
 }
 
 .timeline__item--right:hover .timeline__node-inner,
-.timeline__item--right.visible .timeline__node-inner {
+.timeline__item--right.traced .timeline__node-inner {
   background: var(--magenta);
 }
 
@@ -2970,7 +2985,8 @@ h6,
     text-align: left !important;
   }
 
-  .timeline__line {
+  .timeline__line,
+  .timeline__line-progress {
     left: 20px;
     bottom: 80px;
   }
