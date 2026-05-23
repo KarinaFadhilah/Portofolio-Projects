@@ -167,8 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ───────────────────────────────────── */
   function initParallax(s) {
     const configs = [
-      { selector: '.about__photo', speed: 0.08 },
-      { selector: '.project__preview', speed: 0.06 },
+      { selector: '.about__photo', speed: 0.08 }
     ];
 
     const items = [];
