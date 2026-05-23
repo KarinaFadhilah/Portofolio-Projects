@@ -377,18 +377,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       triggered = true;
       counters.forEach(el => {
-        const target = parseInt(el.dataset.target, 10) || 0;
-        let current = 0;
+        const targetVal = el.dataset.target || '0';
+        const isFloat = targetVal.includes('.');
+        const target = parseFloat(targetVal) || 0;
         const dur = 1400;
         const start = performance.now();
 
         function step(now) {
           const t = Math.min((now - start) / dur, 1);
           const ease = 1 - Math.pow(1 - t, 3);
-          current = Math.round(ease * target);
-          el.textContent = current;
+          const current = ease * target;
+
+          el.textContent = isFloat ? current.toFixed(2) : Math.round(current);
+
           if (t < 1) requestAnimationFrame(step);
-          else el.textContent = target;
+          else el.textContent = isFloat ? target.toFixed(2) : target;
         }
         requestAnimationFrame(step);
       });
