@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTimelineTracing(scroller);
     initGradientBlinds();
     initSilk();
+    initHeroSplitText();
   }
 
   /* ─────────────────────────────────────
@@ -120,6 +121,49 @@ document.addEventListener('DOMContentLoaded', () => {
         s.scrollTo(target, { offset: -80 });
       });
     });
+  }
+
+  /* ─────────────────────────────────────
+     HERO SPLIT TEXT
+  ───────────────────────────────────── */
+  function initHeroSplitText() {
+    const textEl = document.querySelector('.hero__title-row .ht-word:not(.ht-word--italic)');
+    if (!textEl) return;
+    
+    // Disable the CSS 'wordUp' animation with !important so it doesn't override GSAP,
+    // but keep the 'ht-word' class so the text size and font remain correct!
+    textEl.style.setProperty('animation', 'none', 'important');
+    // Reset the CSS initial translateY(110%) so the element is visible for GSAP inner spans!
+    textEl.style.transform = 'translateY(0)';
+    textEl.style.opacity = '1';
+    
+    const text = textEl.getAttribute('data-word') || textEl.textContent;
+    textEl.innerHTML = '';
+    
+    const chars = [];
+    text.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.display = 'inline-block';
+      span.style.willChange = 'transform, opacity';
+      if (char === ' ') {
+        span.innerHTML = '&nbsp;';
+      }
+      textEl.appendChild(span);
+      chars.push(span);
+    });
+
+    gsap.fromTo(chars,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power4.out',
+        stagger: 0.05,
+        delay: 1.5 // Wait for page loader to finish
+      }
+    );
   }
 
   /* ─────────────────────────────────────
@@ -1047,7 +1091,7 @@ void main() {
     const t0 = performance.now();
 
     const loop = t => {
-      program.uniforms.uTime.value = (t - t0) * 0.0001; 
+      program.uniforms.uTime.value = (t - t0) * 0.0001;
       renderer.render({ scene: mesh });
       raf = requestAnimationFrame(loop);
     };

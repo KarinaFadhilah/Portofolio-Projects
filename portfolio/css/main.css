@@ -2546,7 +2546,7 @@ h6,
   font-size: clamp(4rem, 14vw, 9.5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
-  background: linear-gradient(90deg, var(--magenta) 0%, var(--cyan) 50%, var(--yellow) 100%);
+  background: linear-gradient(90deg, #f272a8 0%, #c44169 50%, #f272a8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
