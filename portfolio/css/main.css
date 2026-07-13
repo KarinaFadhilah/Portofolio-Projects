@@ -4,23 +4,24 @@
    ════════════════════════════════════════ */
 
 :root {
-  /* Dark base */
-  --bg: #0c0c14;
-  --bg2: #11111e;
-  --surface: #16162a;
+  /* Dark base matching image shadow */
+  --bg: #05060b;
+  --bg2: #0a0b14;
+  --surface: #111322;
   --border: rgba(255, 255, 255, 0.07);
 
-  /* The fun colors */
-  --magenta: #ff6bff;
-  --cyan: #5fffd4;
-  --yellow: #ffe066;
-  --lime: #a8ff6b;
-  --orange: #ff9a3c;
-  --blue: #3b9eff;
+  /* The vibrant colors from the new image */
+  --red: #c44169;
+  --magenta: #f272a8;
+  --orange: #ff9a55;
+  --yellow: #ffb86c;
+  --cyan: #296092;
+  --lime: #8544c7; /* mapped to purple/indigo */
+  --blue: #8544c7;
 
   /* Text */
-  --white: #f0eeff;
-  --muted: rgba(240, 238, 255, 0.5);
+  --white: #ffffff;
+  --muted: rgba(255, 255, 255, 0.6);
 
   /* Fonts */
   --f-display: 'Archivo', sans-serif;
@@ -2284,7 +2285,7 @@ h6,
 /* Efek Grid Seluruh Page */
 .site-main::before {
   content: '';
-  position: fixed;
+  position: absolute;
   inset: 0;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -2757,10 +2758,12 @@ h6,
   width: 2px;
   background: linear-gradient(to bottom, var(--cyan), var(--magenta));
   transform: translateX(-50%);
-  z-index: 2; /* Sits above standard track line, below nodes */
+  z-index: 2;
+  /* Sits above standard track line, below nodes */
   pointer-events: none;
   box-shadow: 0 0 8px var(--cyan), 0 0 15px var(--magenta);
-  clip-path: inset(0 0 100% 0); /* Hidden by default, animated via ScrollTrigger */
+  clip-path: inset(0 0 100% 0);
+  /* Hidden by default, animated via ScrollTrigger */
 }
 
 .timeline__item {

@@ -16,6 +16,11 @@
   <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- OGL -->
+  <script type="module">
+    import * as ogl from 'https://cdn.jsdelivr.net/npm/ogl@1.0.10/+esm';
+    window.ogl = ogl;
+  </script>
 </head>
 
 <body>
@@ -31,7 +36,7 @@
         <span class="l-char" style="--d:180ms">I</span>
         <span class="l-char" style="--d:240ms">N</span>
         <span class="l-char" style="--d:300ms">A</span>
-        
+
         <span class="l-char" style="--d:420ms">F</span>
         <span class="l-char" style="--d:480ms">A</span>
         <span class="l-char" style="--d:540ms">D</span>
@@ -89,18 +94,8 @@
            HERO
       ═══════════════════════════════ -->
         <section class="hero" id="hero">
-
-          <!-- Colorful blob background -->
-          <div class="hero__blobs">
-            <div class="blob blob--magenta"></div>
-            <div class="blob blob--cyan"></div>
-            <div class="blob blob--yellow"></div>
-            <div class="blob blob--lime"></div>
-            <div class="blob blob--orange"></div>
-          </div>
-
-          <!-- Noise grain overlay -->
-          <div class="hero__grain"></div>
+          <div id="gradient-blinds-container" class="gradient-blinds-container"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1;"></div>
 
           <!-- Grid -->
           <div class="hero__grid-lines"></div>
@@ -196,7 +191,8 @@
             <div class="about__left">
               <div class="about__photo-wrap" data-reveal data-dir="left" style="max-width: 400px; margin: 0 auto;">
                 <div class="about__photo">
-                  <img src="src/images/profile 3.JPG" alt="Karina Fadhilah" class="about-img" style="width: 100%; aspect-ratio: 280 / 360; object-fit: cover; object-position: top center; display: block; transform: scale(1.4); transform-origin: top center;" />
+                  <img src="src/images/profile 3.JPG" alt="Karina Fadhilah" class="about-img"
+                    style="width: 100%; aspect-ratio: 280 / 360; object-fit: cover; object-position: top center; display: block; transform: scale(1.4); transform-origin: top center;" />
                   <div class="photo__color-bar">
                     <div class="pcb pcb--1"></div>
                     <div class="pcb pcb--2"></div>
@@ -230,10 +226,14 @@
                 <em>My Journey</em>
               </h2>
               <p class="about__body" data-reveal data-dir="right">
-                An enthusiastic UI/UX designer and product developer currently pursuing an undergraduate degree at Telkom University (GPA: 3.80/4.00). I specialize in blending clean, functional engineering with modern, fluid visual aesthetics.
+                An enthusiastic UI/UX designer and product developer currently pursuing an undergraduate degree at
+                Telkom University (GPA: 3.80/4.00). I specialize in blending clean, functional engineering with modern,
+                fluid visual aesthetics.
               </p>
               <p class="about__body" data-reveal data-dir="right">
-                Operating as a Freelance & Project-Based Developer, I build interactive interfaces and digital ecosystem platforms. From crafting robust back-ends with Laravel and FastAPI to designing seamless user flows in Figma, I focus on creating sustainable, user-centered digital solutions.
+                Operating as a Freelance & Project-Based Developer, I build interactive interfaces and digital ecosystem
+                platforms. From crafting robust back-ends with Laravel and FastAPI to designing seamless user flows in
+                Figma, I focus on creating sustainable, user-centered digital solutions.
               </p>
 
               <div class="about__counters" data-reveal data-dir="bottom">
@@ -270,8 +270,10 @@
         ═══════════════════════════════ -->
         <section class="experience" id="experience">
           <div class="experience__blobs">
-            <div class="blob blob--yellow blob--sm" style="top: 10%; left: -80px; width: 350px; height: 350px; filter: blur(80px); opacity: 0.3;"></div>
-            <div class="blob blob--cyan blob--sm" style="bottom: 10%; right: -60px; width: 300px; height: 300px; filter: blur(70px); opacity: 0.3;"></div>
+            <div class="blob blob--yellow blob--sm"
+              style="top: 10%; left: -80px; width: 350px; height: 350px; filter: blur(80px); opacity: 0.3;"></div>
+            <div class="blob blob--cyan blob--sm"
+              style="bottom: 10%; right: -60px; width: 300px; height: 300px; filter: blur(70px); opacity: 0.3;"></div>
           </div>
 
           <div class="experience__inner">
@@ -306,7 +308,8 @@
                   </div>
                   <div class="timeline__card-body">
                     <p class="timeline__focus">Web Developer &amp; UI/UX Designer focus</p>
-                    <p class="timeline__text">Blending clean, functional code with modern visual aesthetics like glassmorphism and aurora gradients to create impactful digital experiences.</p>
+                    <p class="timeline__text">Blending clean, functional code with modern visual aesthetics like
+                      glassmorphism and aurora gradients to create impactful digital experiences.</p>
                   </div>
                 </div>
               </div>
@@ -325,7 +328,8 @@
                   </div>
                   <div class="timeline__card-body">
                     <p class="timeline__focus">Full-Stack Development &amp; Architecture</p>
-                    <p class="timeline__text">Designing clean, interactive user interfaces and developing front-end and back-end architectures for digital ecosystem platforms.</p>
+                    <p class="timeline__text">Designing clean, interactive user interfaces and developing front-end and
+                      back-end architectures for digital ecosystem platforms.</p>
                   </div>
                 </div>
               </div>
@@ -386,12 +390,14 @@
                   </div>
                 </div>
                 <h3 class="project__title">LUMBA<br /><em>— Ecosystem Platform</em></h3>
-                <p class="project__desc">A digital ecosystem platform for the fishery sector, integrating fishers, cooperatives, and cold chain distribution to drive sustainable innovation and social impact.</p>
+                <p class="project__desc">A digital ecosystem platform for the fishery sector, integrating fishers,
+                  cooperatives, and cold chain distribution to drive sustainable innovation and social impact.</p>
                 <a href="#" class="project__link">View Project Details →</a>
               </div>
               <div class="project__preview project__preview--1">
                 <div class="project__image-frame">
-                  <img src="https://picsum.photos/600/400?random=1" alt="LUMBA Ecosystem Platform" class="project__image" />
+                  <img src="https://picsum.photos/600/400?random=1" alt="LUMBA Ecosystem Platform"
+                    class="project__image" />
                 </div>
               </div>
             </div>
@@ -408,12 +414,14 @@
                   </div>
                 </div>
                 <h3 class="project__title">Banova<br /><em>— Product Visualization</em></h3>
-                <p class="project__desc">A sustainable fashion brand focusing on creating eco-friendly accessories like bags and wallets crafted from banana pseudostem fiber (banana leather).</p>
+                <p class="project__desc">A sustainable fashion brand focusing on creating eco-friendly accessories like
+                  bags and wallets crafted from banana pseudostem fiber (banana leather).</p>
                 <a href="#" class="project__link">View Product Visualization →</a>
               </div>
               <div class="project__preview project__preview--2">
                 <div class="project__image-frame">
-                  <img src="https://picsum.photos/600/400?random=2" alt="Banova Product Visualization" class="project__image" />
+                  <img src="https://picsum.photos/600/400?random=2" alt="Banova Product Visualization"
+                    class="project__image" />
                 </div>
               </div>
             </div>
@@ -431,12 +439,14 @@
                   </div>
                 </div>
                 <h3 class="project__title">Portal UKM Telkom University<br /><em>— Dashboard UI</em></h3>
-                <p class="project__desc">A web-based management system built to streamline student activity units' data and recruitment processes with robust dashboard administration and CRUD operations.</p>
+                <p class="project__desc">A web-based management system built to streamline student activity units' data
+                  and recruitment processes with robust dashboard administration and CRUD operations.</p>
                 <a href="#" class="project__link">View Dashboard UI →</a>
               </div>
               <div class="project__preview project__preview--3">
                 <div class="project__image-frame">
-                  <img src="https://picsum.photos/600/400?random=3" alt="Portal UKM Dashboard UI" class="project__image" />
+                  <img src="https://picsum.photos/600/400?random=3" alt="Portal UKM Dashboard UI"
+                    class="project__image" />
                 </div>
               </div>
             </div>
@@ -471,7 +481,8 @@
                 <div class="service-card__icon">✦</div>
                 <div class="service-card__num">02</div>
                 <h3 class="service-card__title">Best Promotion - ASEAN Business Plan Competition</h3>
-                <p class="service-card__desc">Highlighting the innovative Mycelia digital ecosystem and winning the Best Promotion award.</p>
+                <p class="service-card__desc">Highlighting the innovative Mycelia digital ecosystem and winning the Best
+                  Promotion award.</p>
                 <div class="service-card__glow"></div>
               </div>
 
@@ -479,7 +490,8 @@
                 <div class="service-card__icon">❋</div>
                 <div class="service-card__num">03</div>
                 <h3 class="service-card__title">2nd Place - National Infographic Design Competition</h3>
-                <p class="service-card__desc">Second Place / Winner of the National Infographic Design Competition 2025 issued by KSR PMI Universitas Widyagama Malang</p>
+                <p class="service-card__desc">Second Place / Winner of the National Infographic Design Competition 2025
+                  issued by KSR PMI Universitas Widyagama Malang</p>
                 <div class="service-card__glow"></div>
               </div>
 
@@ -590,11 +602,9 @@
   </div><!-- smooth-wrapper -->
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__video-bg">
-      <div class="footer__mesh-bg"></div>
-    </div>
-    <div class="footer__inner">
+  <footer class="footer" style="position: relative; overflow: hidden; background: transparent;">
+    <div id="footer-silk" style="position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1;"></div>
+    <div class="footer__inner" style="position: relative; z-index: 1;">
       <!-- FOOTER TOP SECTION -->
       <div class="footer__top">
         <div class="footer__col footer__col--brand">
@@ -604,7 +614,7 @@
           </div>
           <p class="footer__slogan">Crafting high-end digital experiences that people feel, not just see.</p>
         </div>
-        
+
         <div class="footer__col footer__col--links">
           <span class="footer__col-title">Navigation</span>
           <ul class="footer__col-list">
@@ -615,7 +625,7 @@
             <li><a href="#contact" class="footer__link">Contact</a></li>
           </ul>
         </div>
-        
+
         <div class="footer__col footer__col--contact">
           <span class="footer__col-title">Say Hello</span>
           <a href="mailto:hello@zaranova.co" class="footer__email">hello@zaranova.co</a>
